@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://cdn.anychart.com/releases/8.2.1/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.2.1/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.2.1/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.2.1/js/anychart-cartesian-3d.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.2.1/css/anychart-ui.min.css" />
+    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.2.1/fonts/css/anychart-font.min.css" />
+    <style>
+            html, body, #container {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+</head>
+<body>
+<div id="container"></div>
+<script type="text/javascript">
+            anychart.onDocumentReady(function() {
+                                     // create data set on our data
+                                     chartData = {
+                                     title: 'Company Profit Dynamic in Regions by Year',
+                                     header: ['#', 'Florida', 'Texas', 'Nevada'],
+                                     rows: getData()
+                                     };
+
+                                     // create area chart
+                                     var chart = anychart.line3d();
+
+                                     // set chart data
+                                     chart.data(chartData);
+
+                                     // turn on chart animation
+                                     chart.animation(true);
+
+                                     chart.yAxis().title('Profit in Dollars');
+                                     chart.yAxis().labels().format('{%Value}k');
+
+                                     // turn on legend
+                                     chart.legend()
+                                     .enabled(true)
+                                     .fontSize(13)
+                                     .padding([0, 0, 20, 0]);
+
+                                     // set 3D settings
+                                     chart.zAspect('70%')
+                                     .zAngle(60);
+
+                                     // set interactivity and tooltips settings
+                                     chart.interactivity().hoverMode('by-x');
+                                     chart.tooltip().displayMode('union');
+
+                                     // set container id for the chart
+                                     chart.container('container');
+
+                                     // initiate chart drawing
+                                     chart.draw();
+                                     });
+
+                                     function getData() {
+                                         return [
+                                                 ['1996', 300, 242, 162],
+                                                 ['1997', 300, 254, 90],
+                                                 ['1998', 330, 226, 50],
+                                                 ['1999', 342, 232, 77],
+                                                 ['2000', 348, 268, 35],
+                                                 ['2001', 334, 254, 45],
+                                                 ['2002', 325, 235, 88],
+                                                 ['2003', 316, 266, 120],
+                                                 ['2004', 318, 288, 156],
+                                                 ['2005', 330, 220, 123],
+                                                 ['2006', 355, 215, 88],
+                                                 ['2007', 366, 236, 66],
+                                                 ['2008', 337, 247, 45],
+                                                 ['2009', 352, 172, 29],
+                                                 ['2010', 377, 137, 45],
+                                                 ['2011', 383, 123, 88],
+                                                 ['2012', 344, 134, 102],
+                                                 ['2013', 366, 146, 46],
+                                                 ['2014', 389, 159, 69],
+                                                 ['2015', 334, 104, 84]
+                                                 ]
+                                     }
+        </script>
+</body>
+</html>

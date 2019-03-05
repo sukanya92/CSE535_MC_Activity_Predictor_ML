@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Assignment3_Group12</string>
+    <string-array name="array_activity">
+        <item>Walking</item>
+        <item>Running</item>
+        <item>Jumping</item>
+    </string-array>
+</resources>

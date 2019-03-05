@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cse535.assignment3_group12.GraphActivity">
+
+    <CheckBox
+        android:id="@+id/checkBoxJump"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="8dp"
+        android:text="Jumping"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/checkBoxRun"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.551" />
+
+    <CheckBox
+        android:id="@+id/checkBoxRun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="44dp"
+        android:text="Running"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/checkBoxWalk" />
+
+    <CheckBox
+        android:id="@+id/checkBoxWalk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="Walking"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginLeft="27dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <WebView
+        android:id="@+id/webViewGraph"
+        android:layout_width="374dp"
+        android:layout_height="490dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="7dp" />
+</android.support.constraint.ConstraintLayout>
